@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer';
 
-const URL_DUEL_LINKS_REDDIT = 'https://www.reddit.com/r/DuelLinks/';
+const URL_DUEL_LINKS_BOX = 'https://www.konami.com/yugioh/duel_links/en/box/';
 
 /*  async function selectColumn4(param: string) {
   const data = await document.querySelector(param);
@@ -21,12 +21,14 @@ async function puppeteerStart(url: string) {
     await page.goto(url);
 
     const result = await page.evaluate(() => {
-      const temperature = document.querySelector<HTMLInputElement>('.column-4');
+      const containerDuelLinksPosts = document.querySelector<HTMLInputElement>(
+        '.rpBJOHq2PR60pnwJlUyP0 div'
+      );
       let temperatureText: any;
-      if (!temperature) {
-        console.log('no hay temperatura');
+      if (!containerDuelLinksPosts) {
+        console.log('no hay posts de Duel Links');
       } else {
-        temperatureText = temperature.innerText;
+        temperatureText = containerDuelLinksPosts.innerText;
         return temperatureText;
       }
     });
@@ -41,7 +43,7 @@ async function puppeteerStart(url: string) {
 }
 
 async function start() {
-  const data = await puppeteerStart(URL_DUEL_LINKS_REDDIT);
+  const data = await puppeteerStart(URL_DUEL_LINKS_BOX);
   console.log(data);
 }
 

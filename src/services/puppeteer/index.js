@@ -1,25 +1,39 @@
 const puppeteer = require('puppeteer');
 
-const urlWebsite =
-  'http://www.meteocentrale.ch/it/europa/svizzera/meteo-corvatsch/details/S067910/';
+const WBS =
+  'https://www.konami.com/yugioh/duel_links/en/box/voltageofthemetal/';
 
-async function puppeteerStart() {
+async function puppeteerStart(website) {
   const browser = await puppeteer.launch();
   try {
     const page = await browser.newPage();
-    await page.goto(
-      'http://www.meteocentrale.ch/it/europa/svizzera/meteo-corvatsch/details/S067910/'
-    );
+    await page.goto(website);
 
     const result = await page.evaluate(() => {
-      let temperature = document.querySelector('.column-4');
-      let temperatureText;
-      if (!temperature) {
-        console.log('no hay temperatura');
+      let container = document.querySelector('.card-list');
+      let objectCards = [];
+
+      if (!container) {
+        console.log('no hay container de Cajas');
       } else {
-        temperatureText = temperature.innerText;
-        return temperatureText;
+        console.log('hay container');
+        let cards = container.querySelectorAll('li');
+
+        if (!cards) {
+          console.log('no hay li');
+        } else {
+          cards.forEach((card, index) => {
+            let indice = index;
+            let cardName = card.querySelector('dt').innerText;
+
+            let cardType = card.querySelector('dd').innerHTML;
+            const dataCard = { indice, cardName, cardType };
+            objectCards.push(dataCard);
+          });
+        }
       }
+
+      return objectCards;
     });
 
     return result;
@@ -32,7 +46,7 @@ async function puppeteerStart() {
 }
 
 async function start() {
-  const data = await puppeteerStart(urlWebsite);
+  const data = await puppeteerStart(WBS);
   console.log(data);
 }
 
