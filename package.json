@@ -1,18 +1,24 @@
 {
-  "name": "puppeteer-nodemailer-jobs",
+  "name": "puppeteer-nodemailer-duel-links",
   "version": "1.0.0",
-  "description": "",
+  "description": "Scrapping cards and the info from whatever box do you want, and send it to your email",
   "main": "index.js",
   "scripts": {
     "dev": "npx ts-node index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node ./build/index.js"
   },
   "keywords": [
     "nodemailer",
-    "puppeteer"
+    "puppeteer",
+    "typescript"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/falsepopsky/puppeteer-nodemailer-sample"
+  },
   "author": "Rodrigo Toledo",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^14.14.9",
     "@types/nodemailer": "^6.4.0",
