@@ -41,3 +41,5 @@ async function openDuelLinksSite(url: string) {
     await browser.close();
   }
 }
+
+export default openDuelLinksSite;

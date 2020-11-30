@@ -1,3 +1,5 @@
+import openDuelLinksSite from './src/services/puppeteer/index';
+
 /* let nameBox = 'voltageofthemetal';
 let duelLinksBox = `https://www.konami.com/yugioh/duel_links/en/box/${nameBox}/`;
 
