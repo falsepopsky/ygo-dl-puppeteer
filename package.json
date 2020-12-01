@@ -1,7 +1,7 @@
 {
   "name": "puppeteer-nodemailer-duel-links",
   "version": "1.0.0",
-  "description": "Scrapping cards and the info from whatever box do you want, and send it to your email",
+  "description": "Scrapping Box info, like cards, name and image from whatever box do you want, and then send it to your email",
   "main": "index.js",
   "scripts": {
     "dev": "npx ts-node index.ts",

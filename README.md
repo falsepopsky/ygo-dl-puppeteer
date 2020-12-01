@@ -6,7 +6,7 @@
 
 ## **In this project you can get all the cards from a selected box and then send it to your email.**
 
-why?, this is another test, I just wanna try some other libraries from npm and build something.
+why?, this is another sample/test, I like to play with some libraries from npm and build something.
 
 <div align="center" style="margin: 2em 0 2em 0">
     <img src="docs/images/main_box.png" alt="Main Box Section" />
