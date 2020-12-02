@@ -1,21 +1,27 @@
 import puppeteer from 'puppeteer';
 
 interface boxInfo {
-  imageCover: string;
+  heroCover: string;
+  cardsImageFullList: string;
   subject: string;
 }
 
-async function buildObjectInfo(imageCover: string, subject: string) {
+async function buildObjectInfo(
+  heroCover: string,
+  cardsImageFullList: string,
+  subject: string
+) {
   let infoBox: boxInfo[] = [];
-  const dataInfoBox = { imageCover, subject };
+  const dataInfoBox = { heroCover, cardsImageFullList, subject };
   infoBox.push(dataInfoBox);
   return infoBox;
 }
 
-async function getInfoFromTheBox(boxName: string) {
+async function getInfo(boxName: string) {
   const browser = await puppeteer.launch();
   let urlBox: string = `https://www.konami.com/yugioh/duel_links/en/box/${boxName}/`;
-  let image: string = `https://img.konami.com/yugioh/duel_links/en/box/${boxName}/images/main.jpg?v=2`;
+  let imageHero: string = `https://img.konami.com/yugioh/duel_links/en/box/${boxName}/images/main.jpg?v=2`;
+  let imageCards: string = `https://img.konami.com/yugioh/duel_links/en/box/${boxName}/images/card_en.jpg?v=2`;
 
   try {
     const page = await browser.newPage();
@@ -27,7 +33,7 @@ async function getInfoFromTheBox(boxName: string) {
       )!;
 
       if (!getSubject) {
-        let notSubject = '';
+        let notSubject = 'Update the subject container class!';
         return notSubject;
       } else {
         let subjectText: string = getSubject.innerHTML.replace('<br>', ' ');
@@ -35,7 +41,7 @@ async function getInfoFromTheBox(boxName: string) {
       }
     });
 
-    const objectInfo = await buildObjectInfo(image, subject);
+    const objectInfo = await buildObjectInfo(imageHero, imageCards, subject);
 
     return objectInfo;
   } catch (error) {
@@ -46,4 +52,4 @@ async function getInfoFromTheBox(boxName: string) {
   }
 }
 
-export default getInfoFromTheBox;
+export default getInfo;

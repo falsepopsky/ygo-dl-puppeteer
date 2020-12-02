@@ -6,7 +6,7 @@ interface cardItem {
   type: string;
 }
 
-async function openDuelLinksSite(url: string) {
+async function getCards(url: string) {
   const browser = await puppeteer.launch();
   try {
     const page = await browser.newPage();
@@ -43,4 +43,4 @@ async function openDuelLinksSite(url: string) {
   }
 }
 
-export default openDuelLinksSite;
+export default getCards;

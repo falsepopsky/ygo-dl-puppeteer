@@ -1,13 +1,10 @@
-import openDuelLinksSite from './src/services/puppeteer/getCardsFromBox';
+import { getCards, getInfo } from './src/services/puppeteer/index';
 
-/* let nameBox = 'voltageofthemetal';
-let duelLinksBox = `https://www.konami.com/yugioh/duel_links/en/box/${nameBox}/`;
+let nameBox: string = 'voltageofthemetal';
 
 async function start() {
-    const data = await openDuelLinksSite(duelLinksBox);
-    console.log(data);
-  }
-  
-  start();
-  
- */
+  const cardsBoxData = await getCards(nameBox);
+  const infoBoxData = await getInfo(nameBox);
+}
+
+start();
