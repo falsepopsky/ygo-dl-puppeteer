@@ -8,9 +8,11 @@ interface cardItem {
 
 async function getCards(url: string) {
   const browser = await puppeteer.launch();
+  const urlBox: string = `https://www.konami.com/yugioh/duel_links/en/box/${url}/`;
+
   try {
     const page = await browser.newPage();
-    await page.goto(url);
+    await page.goto(urlBox);
 
     const result = await page.evaluate(() => {
       const container = document.querySelector<HTMLInputElement>('.card-list');
@@ -30,10 +32,8 @@ async function getCards(url: string) {
           objectCards.push(dataCards);
         });
       }
-
       return objectCards;
     });
-
     return result;
   } catch (error) {
     console.error(error);

@@ -1,26 +1,26 @@
 # Duel Links Box Scrapper
 
 <div align="center">
-  	<img style="margin: 2em 0 2em 0" src="docs/images/duel_links_logo.png" alt="Duel Links Logo"/>
+  	<img style="margin: 2em 0;" src="docs/images/duel_links_logo.png" alt="Duel Links Logo"/>
 </div>
 
-## **In this project you can get all the cards from a selected box and then send it to your email.**
+## **In this project you can get information from a selected box launche in duel links, like monsters, spells, image set, cover, etc.**
 
 why?, this is another sample/test, I like to play with some libraries from npm and build something.
 
-<div align="center" style="margin: 2em 0 2em 0">
+<div align="center" style="margin: 2em 0;">
     <img src="docs/images/main_box.png" alt="Main Box Section" />
     <img src="docs/images/mini_box.png" alt="Mini Box Section" />
     <img src="docs/images/structure_deck.png" alt="Structure Deck Section" />
 </div>
 
-## 1. Build with
+## 1. Built with :hammer_and_wrench:
 
 ```
-puppeteer, nodemailer, typescript
+puppeteer, typescript
 ```
 
-<div style="margin: 4em 0 2em 0">
+<div style="margin: 2em 0;">
 
 ## 2. How to start the Project
 
@@ -35,7 +35,7 @@ node.js, typescript.
 ### Clone repository
 
 ```
-$ git clone git@github.com:falsepopsky/puppeteer-nodemailer-sample.git
+$ git clone git@github.com:falsepopsky/ygo-dl-puppeteer.git
 ```
 
 ### Install the project and run
@@ -51,9 +51,20 @@ npm install
 or with typescript just type: npm run dev
 ```
 
-<div style="margin: 4em 0 2em 0">
+### Box Info
 
-## 3. Folder Structure
+:warning: Edit the value of nameBox variable on index.ts, and put the name of the box you want to get information.
+[Duel Links Box](https://www.konami.com/yugioh/duel_links/en/box/).
+
+Example: I need data from Antinomic Theory Box, so...
+
+```
+let nameBox: string = 'antinomictheory';
+```
+
+<div style="margin: 4em 0 2em 0;">
+
+## 3. Folder Structure :open_file_folder:
 
 </div>
 
@@ -62,9 +73,10 @@ or with typescript just type: npm run dev
     ├── docs                    # Documentation files
     ├── src                     # Source files
     │   └── services
-    │       ├── nodemailer      # Send the scrapped data to our email.
     │       └── puppeteer       # Scrapper function.
     ├── index.ts                # To run the project in dev mode
     └── README.md
 
-<div style="margin: 4em 0 2em 0">
+## 4. License :scroll:
+
+[GPL-3.0 License](https://github.com/falsepopsky/ygo-dl-puppeteer/blob/main/LICENSE)

@@ -42,7 +42,6 @@ async function getInfo(boxName: string) {
     });
 
     const objectInfo = await buildObjectInfo(imageHero, imageCards, subject);
-
     return objectInfo;
   } catch (error) {
     console.error(error);
