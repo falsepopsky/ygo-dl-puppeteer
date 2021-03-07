@@ -1,4 +1,4 @@
-import { getCards, getInfo } from './src/services/puppeteer/index';
+import { getCards, getInfo } from './services/puppeteer/index';
 
 let nameBox: string = 'voltageofthemetal';
 

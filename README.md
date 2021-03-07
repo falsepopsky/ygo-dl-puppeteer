@@ -4,9 +4,9 @@
   	<img style="margin: 2em 0;" src="docs/images/duel_links_logo.png" alt="Duel Links Logo"/>
 </div>
 
-## **In this project you can get information from a selected box launche in duel links, like monsters, spells, image set, cover, etc.**
+## **In this project you can get information from a selected box released on duel links, like monsters, spells, image set, cover, etc.**
 
-why?, this is another sample/test, I like to play with some libraries from npm and build something.
+why?, this is another sample/test, I like to play with some libraries from npm and built something.
 
 <div align="center" style="margin: 2em 0;">
     <img src="docs/images/main_box.png" alt="Main Box Section" />
