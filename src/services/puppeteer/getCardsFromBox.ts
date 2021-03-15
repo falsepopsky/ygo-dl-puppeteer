@@ -16,13 +16,13 @@ async function getCards(url: string) {
 
     const result = await page.evaluate(() => {
       const container = document.querySelector<HTMLInputElement>('.card-list');
-      let objectCards: cardItem[] = [];
 
       if (!container) {
         let noCards: string = 'Update the container class!';
         return noCards;
       } else {
         let cards = container.querySelectorAll<HTMLInputElement>('li')!;
+        let objectCards: cardItem[] = [];
 
         cards.forEach((card, index) => {
           let id = index;
@@ -31,8 +31,8 @@ async function getCards(url: string) {
           const dataCards = { id, name, type };
           objectCards.push(dataCards);
         });
+        return objectCards;
       }
-      return objectCards;
     });
     return result;
   } catch (error) {
