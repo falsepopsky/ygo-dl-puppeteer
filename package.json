@@ -1,7 +1,7 @@
 {
   "name": "ygodl-box-scrapper",
   "version": "0.0.1",
-  "description": "Web Scraper on Duel links's official site. Collecting the information contained from a selected box, like name, type and image cover.",
+  "description": " Yu-Gi-Oh! DUEL LINKS box scrapper from konami's site.",
   "exports": "./dist/index.js",
   "type": "module",
   "keywords": [
