@@ -1,82 +1,61 @@
-# Duel Links Box Scrapper
+# Yu-Gi-Oh! DUEL LINKS - Box Scrapper
 
 <div align="center">
-  	<img style="margin: 2em 0;" src="docs/images/duel_links_logo.png" alt="Duel Links Logo"/>
+  	<img src="docs/images/duel_links_logo.png" alt="Duel Links Logo" />
 </div>
 
-## **In this project you can get information from a selected box released on duel links, like monsters, spells, image set, cover, etc.**
+## :information_source: About
 
-why?, this is another sample/test, I like to play with some libraries from npm and built something.
+Get the full set of cards from any released box on Yu-Gi-Oh! DUEL LINKS.
 
-<div align="center" style="margin: 2em 0;">
+<div align="center">
     <img src="docs/images/main_box.png" alt="Main Box Section" />
     <img src="docs/images/mini_box.png" alt="Mini Box Section" />
     <img src="docs/images/structure_deck.png" alt="Structure Deck Section" />
 </div>
 
-## 1. Built with :hammer_and_wrench:
+## :package: Built with
+
+- puppeteer
+
+## :pushpin: Setup
+
+**:computer: System requirements**
+
+- [Node.js](https://nodejs.org/en/download/current/)
+- MacOS, Windows (including WSL), and Linux are supported
+- [pnpm](https://pnpm.io/)
+
+**:arrows_counterclockwise: Clone repository**
 
 ```
-puppeteer, typescript
+git clone git@github.com:falsepopsky/ygodl-box-scrapper.git
 ```
 
-<div style="margin: 2em 0;">
-
-## 2. How to start the Project
-
-</div>
-
-### What you need
+**:checkered_flag: Install and start the scrapper**
 
 ```
-node.js, typescript.
+pnpm install
 ```
 
-### Clone repository
-
 ```
-$ git clone git@github.com:falsepopsky/ygo-dl-puppeteer.git
+pnpm build
 ```
 
-### Install the project and run
-
 ```
-# install dependencies
-npm install
-
-# run the project
-1. npm run build
-2. npm run start
-
-or with typescript just type: npm run dev
+pnpm start
 ```
 
-### Box Info
+#### :scroll: License
 
-:warning: Edit the value of nameBox variable on index.ts, and put the name of the box you want to get information.
-[Duel Links Box](https://www.konami.com/yugioh/duel_links/en/box/).
+[GPL-3.0 License](https://github.com/falsepopsky/ygodl-box-scrapper/blob/main/LICENSE)
 
-Example: I need data from Antinomic Theory Box, so...
+#### :open_file_folder: Folder Structure
 
 ```
-let nameBox: string = 'antinomictheory';
-```
-
-<div style="margin: 4em 0 2em 0;">
-
-## 3. Folder Structure :open_file_folder:
-
-</div>
-
     .
-    ├── build                   # To run the project in production mode
-    ├── docs                    # Documentation files
-    ├── src                     # Source files
-    │   └── services
-    │       └── puppeteer       # Scrapper function.
-    ├── index.ts                # To run the project in dev mode
+    ├── docs                    # Documentation files.
+    ├── .vscode                 # VSCode settings and recommended extensions.
+    ├── src                     # Source files.
     └── README.md
-
-## 4. License :scroll:
-
-[GPL-3.0 License](https://github.com/falsepopsky/ygo-dl-puppeteer/blob/main/LICENSE)
+```
