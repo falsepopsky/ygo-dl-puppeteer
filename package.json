@@ -1,7 +1,7 @@
 {
   "name": "ygodl-box-scrapper",
   "version": "0.0.1",
-  "description": " Yu-Gi-Oh! DUEL LINKS box scrapper from konami's site.",
+  "description": "Yu-Gi-Oh! DUEL LINKS box scrapper from konami's site.",
   "exports": "./dist/index.js",
   "type": "module",
   "keywords": [
@@ -11,7 +11,7 @@
     "duel links"
   ],
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "tsx dev/index.ts",
     "prebuild": "rm -rf dist",
     "build": "tsc",
     "start": "node dist/index.js",
@@ -25,21 +25,21 @@
   "author": "Rodrigo Toledo",
   "license": "GPL-3.0",
   "devDependencies": {
-    "@types/node": "^18.11.9",
-    "@typescript-eslint/eslint-plugin": "^5.42.1",
-    "@typescript-eslint/parser": "^5.42.1",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard-with-typescript": "^23.0.0",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard-with-typescript": "^24.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-n": "^15.6.0",
     "eslint-plugin-promise": "^6.1.1",
     "husky": "^8.0.2",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.1",
     "tsx": "^3.12.1",
-    "typescript": "^4.8.4"
+    "typescript": "^4.9.4"
   },
   "dependencies": {
-    "puppeteer": "^19.2.2"
+    "puppeteer": "^19.4.1"
   },
   "engines": {
     "node": ">=18",
