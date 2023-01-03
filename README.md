@@ -43,8 +43,24 @@ pnpm build
 ```
 
 ```
-pnpm start
+pnpm dev
 ```
+
+or
+
+<details><summary>Use this package</summary>
+
+```javascript
+(async function main() {
+  const englishSet = await getBoxSet('en', 'sd-hero_rising/');
+  console.table(data);
+})().catch((err) => console.log(err));
+```
+
+![English Set](docs/images/set-en.png)
+![Japanese Set](docs/images/set-jp.png)
+
+</details>
 
 #### :scroll: License
 
