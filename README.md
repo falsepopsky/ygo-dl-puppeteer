@@ -6,7 +6,7 @@
 
 ## :information_source: About
 
-Get the full set of cards from any released box on Yu-Gi-Oh! DUEL LINKS.
+Get the full set of cards from any(MAIN, MINI, STRUCTURE DECK) released box on Yu-Gi-Oh! DUEL LINKS.
 
 <div align="center">
     <img src="docs/images/main_box.png" alt="Main Box Section" />
@@ -54,7 +54,9 @@ or
 (async function main() {
   const englishSet = await getBoxSet('en', 'sd-hero_rising/');
   console.table(data);
-})().catch((err) => console.log(err));
+})().catch((err) => {
+  console.log(err);
+});
 ```
 
 ![English Set](docs/images/set-en.png)
@@ -75,3 +77,7 @@ or
     ├── src                     # Source files.
     └── README.md
 ```
+
+#### :shipit: Thoughts on this "repo"
+
+If you are interested, give it a [read](docs/core.md)
