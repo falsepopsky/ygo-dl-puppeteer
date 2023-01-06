@@ -5,15 +5,15 @@
   "exports": "./dist/index.js",
   "type": "module",
   "keywords": [
-    "puppeteer",
-    "typescript",
     "yu-gi-oh",
     "duel links"
   ],
   "scripts": {
-    "dev": "tsx dev/index.ts",
+    "dev-boxset": "tsx dev/boxSets.ts",
+    "dev-boxeslist": "tsx dev/boxesList.ts",
     "prebuild": "rm -rf dist",
     "build": "tsc",
+    "update-db": "node ./dist/core/script.js",
     "prettier-format": "prettier --cache -w .",
     "lint": "eslint . --cache --cache-location \"./node_modules/.cache/eslint/\"",
     "pre-commit": "pnpm prettier-format && pnpm lint"

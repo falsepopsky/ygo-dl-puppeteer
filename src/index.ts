@@ -1,3 +1,3 @@
-import { getBoxSet } from './core/puppeteer.js';
+import { getBoxesList, getBoxSet } from './core/puppeteer.js';
 
-export { getBoxSet };
+export { getBoxSet, getBoxesList };
