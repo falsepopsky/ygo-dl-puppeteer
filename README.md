@@ -51,13 +51,14 @@ or
 <details><summary>Use this package</summary>
 
 ```javascript
-(async function main() {
-  const englishSet = await getBoxSet('en', 'sd-hero_rising/');
-  console.table(data);
-})().catch((err) => {
-  console.log(err);
-});
+// language required to get boxes list.
+const boxesList = await getBoxesList('en');
+
+// language and prefix url box required to get the set list.
+const heroRisingBox = await getBoxSet('en', 'sd-hero_rising/');
 ```
+
+**English and Japanese Box Set example**
 
 ![English Set](docs/images/set-en.png)
 ![Japanese Set](docs/images/set-jp.png)
