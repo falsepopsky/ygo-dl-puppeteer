@@ -22,8 +22,8 @@ Get the full set of cards from any(MAIN, MINI, STRUCTURE DECK) released box on Y
 
 **:computer: System requirements**
 
-- [Node.js](https://nodejs.org/en/download/current/)
-- MacOS, Windows (including WSL), and Linux are supported
+- [Node.js](https://nodejs.org/en/download/current/) (LTS 18 >)
+- MacOS, Windows (WSL), and Linux are supported
 - [pnpm](https://pnpm.io/)
 
 **:arrows_counterclockwise: Clone repository**
@@ -54,11 +54,11 @@ or
 // language required to get boxes list.
 const boxesList = await getBoxesList('en');
 
-// language and prefix url box required to get the set list.
+// language and prefix url box required to get the set of cards.
 const heroRisingBox = await getBoxSet('en', 'sd-hero_rising/');
 ```
 
-**English and Japanese Box Set example**
+**English and Japanese Box Set examples**
 
 ![English Set](docs/images/set-en.png)
 ![Japanese Set](docs/images/set-jp.png)
@@ -73,8 +73,9 @@ const heroRisingBox = await getBoxSet('en', 'sd-hero_rising/');
 
 ```
     .
-    ├── docs                    # Documentation files.
     ├── .vscode                 # VSCode settings and recommended extensions.
+    ├── docs                    # Documentation files.
+    ├── dev                     # Dev enviroment.
     ├── src                     # Source files.
     └── README.md
 ```
