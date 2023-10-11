@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "NodeNext",
-    "outDir": "./dist",
-    "moduleResolution": "NodeNext",
+    "target": "es2022",
+    "module": "node16",
+    "moduleResolution": "node16",
+    "rootDir": ".",
     "declaration": true,
-    "rootDir": "./src",
     "resolveJsonModule": true,
     "allowJs": true,
     "checkJs": true,
@@ -13,11 +12,15 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noImplicitAny": true,
+    "noEmit": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
-    "removeComments": true,
-    "lib": ["ESNext", "DOM"]
+    "lib": ["es2023", "DOM"],
+    "verbatimModuleSyntax": true,
+    "noErrorTruncation": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "**/*.d.ts"]
+  "include": ["src", "dev"],
+  "exclude": ["node_modules"]
 }

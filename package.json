@@ -18,7 +18,7 @@
     "lint": "eslint . --cache --cache-location \"./node_modules/.cache/eslint/\"",
     "prebuild": "rm -rf dist",
     "build": "tsc --project tsconfig.build.json",
-    "update-db": "node ./dist/core/script.js"
+    "update-db": "tsx ./dev/script.ts"
   },
   "devDependencies": {
     "@types/node": "^20.8.4",
