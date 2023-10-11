@@ -1,54 +1,44 @@
 {
   "name": "ygodl-box-scrapper",
-  "version": "0.0.1",
   "description": "Yu-Gi-Oh! DUEL LINKS box scrapper from konami's site.",
-  "exports": "./dist/index.js",
+  "private": true,
   "type": "module",
-  "keywords": [
-    "yu-gi-oh",
-    "duel links"
-  ],
-  "scripts": {
-    "dev-boxset": "tsx dev/boxSets.ts",
-    "dev-boxeslist": "tsx dev/boxesList.ts",
-    "prebuild": "rm -rf dist",
-    "build": "tsc",
-    "update-db": "node ./dist/core/script.js",
-    "prettier-format": "prettier --cache -w .",
-    "lint": "eslint . --cache --cache-location \"./node_modules/.cache/eslint/\"",
-    "pre-commit": "pnpm prettier-format && pnpm lint"
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   },
-  "files": [
-    "dist"
-  ],
-  "author": "Rodrigo Toledo",
+  "author": "falsepopsky",
   "license": "GPL-3.0",
+  "scripts": {
+    "dev:boxset": "tsx dev/boxSets.ts",
+    "dev:boxeslist": "tsx dev/boxesList.ts",
+    "format": "prettier --cache -w .",
+    "lint": "eslint . --cache --cache-location \"./node_modules/.cache/eslint/\"",
+    "prebuild": "rm -rf dist",
+    "build": "tsc --project tsconfig.build.json",
+    "update-db": "node ./dist/core/script.js"
+  },
   "devDependencies": {
-    "@types/node": "^18.11.18",
-    "@typescript-eslint/eslint-plugin": "^5.48.0",
-    "@typescript-eslint/parser": "^5.48.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-config-standard-with-typescript": "^26.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.6.0",
+    "@types/node": "^20.8.4",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-n": "^16.2.0",
     "eslint-plugin-promise": "^6.1.1",
-    "husky": "^8.0.3",
-    "prettier": "^2.8.1",
-    "tsx": "^3.12.1",
-    "typescript": "^4.9.4"
+    "prettier": "^3.0.3",
+    "tsx": "^3.13.0",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
-    "puppeteer": "^19.4.1"
+    "puppeteer": "^21.3.8"
   },
   "engines": {
     "node": ">=18",
-    "pnpm": ">=7"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/falsepopsky/ygodl-box-scrapper.git"
-  },
-  "bugs": {
-    "url": "https://github.com/falsepopsky/ygodl-box-scrapper/issues"
+    "pnpm": ">=8"
   }
 }
