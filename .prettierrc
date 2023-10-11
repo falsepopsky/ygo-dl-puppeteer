@@ -1,8 +1,7 @@
 {
   "bracketSameLine": true,
-  "jsxSingleQuote": true,
   "singleQuote": true,
-  "printWidth": 100,
+  "printWidth": 120,
   "proseWrap": "preserve",
   "trailingComma": "es5",
   "tabWidth": 2
