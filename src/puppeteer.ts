@@ -1,6 +1,7 @@
-import puppeteer from 'puppeteer';
+import { launch } from 'puppeteer';
 
 type KonamiLanguage = 'en' | 'ja';
+type Format = 'rush' | 'speed';
 
 interface BoxDetail {
   name?: string;
@@ -18,13 +19,14 @@ interface BoxSet {
  * @param language - Language to fetch the list of boxes `en` for english and `ja` for japanese.
  * @returns Returns an Array of objects {name, url}.
  */
-async function getBoxesList(language: KonamiLanguage): Promise<BoxDetail[]> {
-  const browser = await puppeteer.launch();
+async function getBoxesList(language: KonamiLanguage, format: Format): Promise<BoxDetail[]> {
+  const target = format === 'rush' ? '#rushduel' : '#speedduel';
+  const browser = await launch({ headless: 'new' });
   const page = await browser.newPage();
 
   await page.goto(`https://www.konami.com/yugioh/duel_links/${language}/box/`);
 
-  const response = await page.$$eval('.box-list ul li', (elements) => {
+  const response = await page.$$eval(`${target} .box-list ul li`, (elements) => {
     if (elements.length === 0) {
       throw new Error('Boxes list classname needs an update');
     }
@@ -52,7 +54,7 @@ async function getBoxesList(language: KonamiLanguage): Promise<BoxDetail[]> {
  * @returns Returns an Array of objects {name, type & rarity}.
  */
 async function getBoxSet(language: KonamiLanguage, sufixUrl: string): Promise<BoxSet[]> {
-  const browser = await puppeteer.launch();
+  const browser = await launch({ headless: 'new' });
   const page = await browser.newPage();
 
   await page.goto(`https://www.konami.com/yugioh/duel_links/${language}/box/${sufixUrl}`);
@@ -94,4 +96,4 @@ async function getBoxSet(language: KonamiLanguage, sufixUrl: string): Promise<Bo
   return response;
 }
 
-export { getBoxesList, getBoxSet };
+export { getBoxSet, getBoxesList };

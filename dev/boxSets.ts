@@ -1,4 +1,4 @@
-import { getBoxSet } from '../dist/index.js';
+import { getBoxSet } from '../src/index.js';
 
 async function start(): Promise<void> {
   try {
