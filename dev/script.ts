@@ -22,7 +22,7 @@ async function writeBoxesFiles(): Promise<void> {
     if (error instanceof Error) {
       console.error(error);
     } else {
-      throw error;
+      console.log('Something went wrong: ', error);
     }
   }
 }
